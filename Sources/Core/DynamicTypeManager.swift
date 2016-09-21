@@ -14,7 +14,7 @@ typealias Gliphy = DynamicTypeManager
 /**
  `DynamicTypeManager` is a singleton that watches for the `UIContentSizeCategoryDidChangeNotification` notification and then updates all views to the new size accordingly. By default, Dynamic Type only works with the system font. Gliphy allows any font installed to be substituted.
 */
-public class DynamicTypeManager {
+open class DynamicTypeManager {
 
     struct Values {
         static let fontKeyPathUILabel =   "font"
@@ -26,20 +26,20 @@ public class DynamicTypeManager {
     /**
      The singleton instance of `DynamicTypeManager`.
     */
-    public static let sharedInstance = DynamicTypeManager()
+    open static let sharedInstance = DynamicTypeManager()
 
     /// Storage and lookup for the views `DynamicTypeManager` is tracking.
-    private var elementToTypeTable: NSMapTable = NSMapTable.weakToStrongObjectsMapTable()
+    fileprivate var elementToTypeTable: NSMapTable<AnyObject, AnyObject> = NSMapTable.weakToStrongObjects()
 
-    private init() {
-        NSNotificationCenter.defaultCenter().addObserver(self,
+    fileprivate init() {
+        NotificationCenter.default.addObserver(self,
             selector: #selector(DynamicTypeManager.contentSizeCategoryDidChange(_:)),
-            name: UIContentSizeCategoryDidChangeNotification,
+            name: NSNotification.Name.UIContentSizeCategoryDidChange,
             object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     /**
@@ -49,7 +49,7 @@ public class DynamicTypeManager {
      - Parameter textStyle: The equivalent text style to size against.
      - Parameter fontName: The name of the custom font to use.
     */
-    public func watchLabel(label: UILabel, textStyle: String, fontName: String) {
+    open func watchLabel(_ label: UILabel, textStyle: UIFontTextStyle, fontName: String) {
         watchElement(label, fontKeyPath: Values.fontKeyPathUILabel, textStyle: textStyle, fontName: fontName)
     }
 
@@ -60,7 +60,7 @@ public class DynamicTypeManager {
      - Parameter textStyle: The equivalent text style to size against.
      - Parameter fontName: The name of the custom font to use.
      */
-    public func watchButton(button: UIButton, textStyle: String, fontName: String) {
+    open func watchButton(_ button: UIButton, textStyle: UIFontTextStyle, fontName: String) {
         watchElement(button, fontKeyPath: Values.fontKeyPathUIButton, textStyle: textStyle, fontName: fontName)
     }
 
@@ -71,7 +71,7 @@ public class DynamicTypeManager {
      - Parameter textStyle: The equivalent text style to size against.
      - Parameter fontName: The name of the custom font to use.
      */
-    public func watchTextField(textField: UITextField, textStyle: String, fontName: String) {
+    open func watchTextField(_ textField: UITextField, textStyle: UIFontTextStyle, fontName: String) {
         watchElement(textField, fontKeyPath: Values.fontKeyPathTextField, textStyle: textStyle, fontName: fontName)
     }
 
@@ -82,7 +82,7 @@ public class DynamicTypeManager {
      - Parameter textStyle: The equivalent text style to size against.
      - Parameter fontName: The name of the custom font to use.
      */
-    public func watchTextView(textView: UITextView, textStyle: String, fontName: String) {
+    open func watchTextView(_ textView: UITextView, textStyle: UIFontTextStyle, fontName: String) {
         watchElement(textView, fontKeyPath: Values.fontKeyPathTextView, textStyle: textStyle, fontName: fontName)
     }
 
@@ -94,7 +94,7 @@ public class DynamicTypeManager {
      - Parameter textStyle: The equivalent text style to size against.
      - Parameter fontName: The name of the custom font to use.
      */
-    public func watchElement(view: UIView, fontKeyPath: String, textStyle: String, fontName: String) {
+    open func watchElement(_ view: UIView, fontKeyPath: String, textStyle: UIFontTextStyle, fontName: String) {
         view.setValue(fontForTextStyle(textStyle, fontName: fontName), forKeyPath: fontKeyPath)
         let typeElement = DynamicTypeElement(keyPath: fontKeyPath, textStyle: textStyle, fontName: fontName)
         elementToTypeTable.setObject(typeElement, forKey: view)
@@ -108,12 +108,12 @@ public class DynamicTypeManager {
      
      - Returns: The font with the `fontName` and size defined by the preferred font with `style`. If the `fontName` is not a valid font on the device, the system font for the `style` is used.
     */
-    func fontForTextStyle(style: String, fontName: String) -> UIFont {
+    func fontForTextStyle(_ style: UIFontTextStyle, fontName: String) -> UIFont {
         if let customSize = DynamicFontRegistry.registry.scaledFontSizeForStyle(style) {
             return UIFont(name: fontName, size: customSize)!
         }
         
-        let systemFont = UIFont.preferredFontForTextStyle(style)
+        let systemFont = UIFont.preferredFont(forTextStyle: style)
         guard let customFont = UIFont(name: fontName, size: systemFont.pointSize) else {
             return systemFont
         }
@@ -123,10 +123,10 @@ public class DynamicTypeManager {
     /**
      Catches the notification for `UIContentSizeCategoryDidChangeNotification`. Updates all of the views stored in the internal storage.
     */
-    @objc public func contentSizeCategoryDidChange(notification: NSNotification) {
+    @objc open func contentSizeCategoryDidChange(_ notification: Notification) {
         let enumerator = elementToTypeTable.keyEnumerator()
         while let view = enumerator.nextObject() as? UIView {
-            if let element = elementToTypeTable[view] as? DynamicTypeElement {
+            if let element = elementToTypeTable.object(forKey: view) as? DynamicTypeElement {
                 let font = fontForTextStyle(element.textStyle, fontName: element.fontName)
                 view.setValue(font, forKeyPath: element.keyPath)
             }

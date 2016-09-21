@@ -11,26 +11,38 @@ import UIKit
 // These extensions are shortcuts to get the textStyle that was set for Dynamic Type
 
 extension UILabel {
-    var textStyle: String? {
-        return font.fontDescriptor().fontAttributes()[Util.dynamicTextAttribute] as? String
+    var textStyle: UIFontTextStyle? {
+        guard let fontTextStyleString = font?.fontDescriptor.fontAttributes[Util.dynamicTextAttribute] as? String else {
+            return nil
+        }
+        return UIFontTextStyle(rawValue: fontTextStyleString)
     }
 }
 
 extension UIButton {
-    var textStyle: String? {
-        let key = Util.dynamicTextAttribute
-        return titleLabel?.font.fontDescriptor().fontAttributes()[key] as? String
+    var textStyle: UIFontTextStyle? {
+        guard let fontTextStyleString = titleLabel?.font?.fontDescriptor.fontAttributes[Util.dynamicTextAttribute] as? String else {
+            return nil
+        }
+        return UIFontTextStyle(rawValue: fontTextStyleString)
+
     }
 }
 
 extension UITextField {
-    var textStyle: String? {
-        return font?.fontDescriptor().fontAttributes()[Util.dynamicTextAttribute] as? String
+    var textStyle: UIFontTextStyle? {
+        guard let fontTextStyleString = font?.fontDescriptor.fontAttributes[Util.dynamicTextAttribute] as? String else {
+            return nil
+        }
+        return UIFontTextStyle(rawValue: fontTextStyleString)
     }
 }
 
 extension UITextView {
-    var textStyle: String? {
-        return font?.fontDescriptor().fontAttributes()[Util.dynamicTextAttribute] as? String
+    var textStyle: UIFontTextStyle? {
+        guard let fontTextStyleString = font?.fontDescriptor.fontAttributes[Util.dynamicTextAttribute] as? String else {
+            return nil
+        }
+        return UIFontTextStyle(rawValue: fontTextStyleString)
     }
 }

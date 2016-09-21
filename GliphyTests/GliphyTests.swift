@@ -12,19 +12,19 @@ import XCTest
 class GliphyTests: XCTestCase {
 
     func testFontBuilder() {
-        let font = DynamicTypeManager.sharedInstance.fontForTextStyle(UIFontTextStyleHeadline, fontName: "Georgia")
+        let font = DynamicTypeManager.sharedInstance.fontForTextStyle(UIFontTextStyle.headline, fontName: "Georgia")
         XCTAssertEqual("Georgia", font.familyName)
     }
     
     func testFontBuilderWithBadStyle() {
-        let font = DynamicTypeManager.sharedInstance.fontForTextStyle("bad font", fontName: "Georgia")
+        let font = DynamicTypeManager.sharedInstance.fontForTextStyle(UIFontTextStyle(rawValue: "bad font"), fontName: "Georgia")
         let defaultFontSize: CGFloat = 12.0
         XCTAssertEqual(defaultFontSize, font.pointSize)
     }
     
     func testFontBuilderWithBadFont() {
-        let font = DynamicTypeManager.sharedInstance.fontForTextStyle(UIFontTextStyleHeadline, fontName: "bad font")
-        let expectedFont = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        let font = DynamicTypeManager.sharedInstance.fontForTextStyle(UIFontTextStyle.headline, fontName: "bad font")
+        let expectedFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         XCTAssertEqual(expectedFont, font)
     }
 }

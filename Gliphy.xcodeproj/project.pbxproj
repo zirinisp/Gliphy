@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		646FEAE51D92B89600375EB7 /* DynamicTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2371C741BED004EB35B /* DynamicTypeElement.swift */; };
 		A779B0881C8F67B50044996A /* DynamicFontRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B0871C8F67B50044996A /* DynamicFontRegistry.swift */; };
 		A779B0891C8F67B50044996A /* DynamicFontRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B0871C8F67B50044996A /* DynamicFontRegistry.swift */; };
 		A779B08A1C8F67B50044996A /* DynamicFontRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A779B0871C8F67B50044996A /* DynamicFontRegistry.swift */; };
@@ -17,9 +18,6 @@
 		A784B2351C7417B3004EB35B /* DynamicTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2341C7417B3004EB35B /* DynamicTypeManager.swift */; };
 		A784B2361C7417B3004EB35B /* DynamicTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2341C7417B3004EB35B /* DynamicTypeManager.swift */; };
 		A784B2381C741BED004EB35B /* DynamicTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2371C741BED004EB35B /* DynamicTypeElement.swift */; };
-		A784B2391C741BED004EB35B /* DynamicTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2371C741BED004EB35B /* DynamicTypeElement.swift */; };
-		A784B23B1C741E84004EB35B /* NSMapTableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B23A1C741E84004EB35B /* NSMapTableExtensions.swift */; };
-		A784B23C1C741E84004EB35B /* NSMapTableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B23A1C741E84004EB35B /* NSMapTableExtensions.swift */; };
 		A784B2451C743306004EB35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2441C743306004EB35B /* AppDelegate.swift */; };
 		A784B2471C743306004EB35B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2461C743306004EB35B /* ViewController.swift */; };
 		A784B24A1C743306004EB35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A784B2481C743306004EB35B /* Main.storyboard */; };
@@ -36,7 +34,6 @@
 		A7EAD5711CD5BD6E008781F6 /* StyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79DBE9A1CB99AF8000BAA63 /* StyleConfig.swift */; };
 		A7EAD5721CD5BD6E008781F6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAD56B1CD5B0D0008781F6 /* Extensions.swift */; };
 		A7EAD5731CD5BD6E008781F6 /* DynamicTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B2371C741BED004EB35B /* DynamicTypeElement.swift */; };
-		A7EAD5741CD5BD6E008781F6 /* NSMapTableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784B23A1C741E84004EB35B /* NSMapTableExtensions.swift */; };
 		A7EAD5751CD5BD6E008781F6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAD5681CD5AFFE008781F6 /* Util.swift */; };
 		A7EAD5771CD5C679008781F6 /* StyleWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAD5761CD5C679008781F6 /* StyleWatcher.swift */; };
 		A7EAD5781CD5C679008781F6 /* StyleWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAD5761CD5C679008781F6 /* StyleWatcher.swift */; };
@@ -64,7 +61,6 @@
 		A784B22A1C74171B004EB35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A784B2341C7417B3004EB35B /* DynamicTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeManager.swift; sourceTree = "<group>"; };
 		A784B2371C741BED004EB35B /* DynamicTypeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeElement.swift; sourceTree = "<group>"; };
-		A784B23A1C741E84004EB35B /* NSMapTableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMapTableExtensions.swift; sourceTree = "<group>"; };
 		A784B2421C743306004EB35B /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A784B2441C743306004EB35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A784B2461C743306004EB35B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +149,6 @@
 				A784B2371C741BED004EB35B /* DynamicTypeElement.swift */,
 				A784B2341C7417B3004EB35B /* DynamicTypeManager.swift */,
 				A7EAD56B1CD5B0D0008781F6 /* Extensions.swift */,
-				A784B23A1C741E84004EB35B /* NSMapTableExtensions.swift */,
 				A79DBE9A1CB99AF8000BAA63 /* StyleConfig.swift */,
 				A7EAD5761CD5C679008781F6 /* StyleWatcher.swift */,
 				A7EAD5681CD5AFFE008781F6 /* Util.swift */,
@@ -249,14 +244,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Tallwave;
 				TargetAttributes = {
 					A784B2181C74171B004EB35B = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					A784B2221C74171B004EB35B = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					A784B2411C743306004EB35B = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -317,7 +314,6 @@
 			files = (
 				A79DBE9B1CB99AF8000BAA63 /* StyleConfig.swift in Sources */,
 				A7EAD5691CD5AFFE008781F6 /* Util.swift in Sources */,
-				A784B23B1C741E84004EB35B /* NSMapTableExtensions.swift in Sources */,
 				A779B0881C8F67B50044996A /* DynamicFontRegistry.swift in Sources */,
 				A7EAD5771CD5C679008781F6 /* StyleWatcher.swift in Sources */,
 				A784B2381C741BED004EB35B /* DynamicTypeElement.swift in Sources */,
@@ -333,13 +329,12 @@
 				A7EAD5781CD5C679008781F6 /* StyleWatcher.swift in Sources */,
 				A779B0891C8F67B50044996A /* DynamicFontRegistry.swift in Sources */,
 				A7EAD56D1CD5B0D0008781F6 /* Extensions.swift in Sources */,
-				A784B23C1C741E84004EB35B /* NSMapTableExtensions.swift in Sources */,
 				A784B2291C74171B004EB35B /* GliphyTests.swift in Sources */,
 				A7EAD56A1CD5AFFF008781F6 /* Util.swift in Sources */,
+				646FEAE51D92B89600375EB7 /* DynamicTypeElement.swift in Sources */,
 				A779B08D1C8F69DA0044996A /* FontRegistryTests.swift in Sources */,
 				A79DBE9C1CB99AF8000BAA63 /* StyleConfig.swift in Sources */,
 				A784B2361C7417B3004EB35B /* DynamicTypeManager.swift in Sources */,
-				A784B2391C741BED004EB35B /* DynamicTypeElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +348,6 @@
 				A784B2451C743306004EB35B /* AppDelegate.swift in Sources */,
 				A7EAD5731CD5BD6E008781F6 /* DynamicTypeElement.swift in Sources */,
 				A779B08A1C8F67B50044996A /* DynamicFontRegistry.swift in Sources */,
-				A7EAD5741CD5BD6E008781F6 /* NSMapTableExtensions.swift in Sources */,
 				A7EAD5791CD5C679008781F6 /* StyleWatcher.swift in Sources */,
 				A7EAD5751CD5BD6E008781F6 /* Util.swift in Sources */,
 				A7EAD5711CD5BD6E008781F6 /* StyleConfig.swift in Sources */,
@@ -404,8 +398,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -433,6 +429,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -452,8 +449,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -473,6 +472,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -484,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -503,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

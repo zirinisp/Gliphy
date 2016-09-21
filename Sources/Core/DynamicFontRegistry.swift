@@ -12,23 +12,23 @@ import UIKit
  `ScaledFontDescriptor` describes how to scale a font with a specific text style.
 */
 struct ScaledFontDescriptor {
-    let originalTextStyle: String
+    let originalTextStyle: UIFontTextStyle
     let scaleAmount: Float
 }
 
 /**
  `DynamicFontRegistry` contains a list of custom font sizes that can be used with Dynamic Type. You can register a custom style that is a scaled version of an existing font style defined by iOS. When the custom font is retrieved it is scaled appropriately along with all the other fonts.
 */
-public class DynamicFontRegistry {
+open class DynamicFontRegistry {
     
     /**
      The singleton instance of `DynamicFontRegistry`.
     */
-    public static let registry = DynamicFontRegistry()
+    open static let registry = DynamicFontRegistry()
     
-    private init() {}
+    fileprivate init() {}
     
-    private var styleDictionary = [String: ScaledFontDescriptor]()
+    fileprivate var styleDictionary = [UIFontTextStyle: ScaledFontDescriptor]()
     
     /**
      Registers a custom text style.
@@ -37,7 +37,7 @@ public class DynamicFontRegistry {
      - Parameter scaledFrom: The built-in text style on which this is based.
      - Parameter byFactor: The multiplier to scale the custom font by.
     */
-    public func addTextStyle(textStyle: String, scaledFrom originalTextStyle: String, byFactor scaleAmount: Float) {
+    open func addTextStyle(_ textStyle: UIFontTextStyle, scaledFrom originalTextStyle: UIFontTextStyle, byFactor scaleAmount: Float) {
         styleDictionary[textStyle] = ScaledFontDescriptor(originalTextStyle: originalTextStyle, scaleAmount: scaleAmount)
     }
     
@@ -46,9 +46,9 @@ public class DynamicFontRegistry {
      
      - Parameter textStyle: The identifier to look up.
     */
-    func scaledFontSizeForStyle(textStyle: String) -> CGFloat? {
+    func scaledFontSizeForStyle(_ textStyle: UIFontTextStyle) -> CGFloat? {
         if let descriptor = styleDictionary[textStyle] {
-            let baseFont = UIFont.preferredFontForTextStyle(descriptor.originalTextStyle)
+            let baseFont = UIFont.preferredFont(forTextStyle: descriptor.originalTextStyle)
             return baseFont.pointSize * CGFloat(descriptor.scaleAmount)
         }
         return nil

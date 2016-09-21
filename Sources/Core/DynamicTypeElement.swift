@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  A wrapper around all of the attributes needed when the content size updates. Not a Struct because those can't be stored in `NSMapTable`.
 */
 class DynamicTypeElement {
     let keyPath: String
-    let textStyle: String
+    let textStyle: UIFontTextStyle
     let fontName: String
 
-    init(keyPath: String, textStyle: String, fontName: String) {
+    init(keyPath: String, textStyle: UIFontTextStyle, fontName: String) {
         self.keyPath = keyPath
         self.textStyle = textStyle
         self.fontName = fontName

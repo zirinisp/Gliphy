@@ -7,19 +7,21 @@
 //
 
 import XCTest
+import UIKit
+
 @testable import Gliphy
 
 class FontRegistryTests: XCTestCase {
     
     func testRetrieveSize() {
-        DynamicFontRegistry.registry.addTextStyle("ReallyBigFont", scaledFrom: UIFontTextStyleHeadline, byFactor: 1.2)
-        let result = DynamicFontRegistry.registry.scaledFontSizeForStyle("ReallyBigFont")
+        DynamicFontRegistry.registry.addTextStyle(UIFontTextStyle(rawValue: "ReallyBigFont"), scaledFrom: UIFontTextStyle.headline, byFactor: 1.2)
+        let result = DynamicFontRegistry.registry.scaledFontSizeForStyle(UIFontTextStyle(rawValue: "ReallyBigFont"))
         XCTAssertNotNil(result)
         XCTAssertNotEqual(result, 12.0)
     }
     
     func testNilRetrieval() {
-        let result = DynamicFontRegistry.registry.scaledFontSizeForStyle("DoesNotExist")
+        let result = DynamicFontRegistry.registry.scaledFontSizeForStyle(UIFontTextStyle(rawValue: "DoesNotExist"))
         XCTAssertNil(result)
     }
     

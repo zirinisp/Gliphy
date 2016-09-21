@@ -18,13 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let style = "ReallyReallyBigFont"
-        DynamicFontRegistry.registry.addTextStyle(style,
-                                                  scaledFrom: UIFontTextStyleHeadline,
+        DynamicFontRegistry.registry.addTextStyle(UIFontTextStyle(rawValue: style),
+                                                  scaledFrom: UIFontTextStyle.headline,
                                                   byFactor: 4)
         
-        Gliphy.sharedInstance.watchLabel(heading, textStyle: UIFontTextStyleHeadline, fontName: "Georgia")
-        Gliphy.sharedInstance.watchButton(tapme, textStyle: UIFontTextStyleBody, fontName: "Georgia")
-        Gliphy.sharedInstance.watchLabel(customStyleLabel, textStyle: "ReallyReallyBigFont", fontName: "Helvetica")
+        Gliphy.sharedInstance.watchLabel(heading, textStyle: UIFontTextStyle.headline, fontName: "Georgia")
+        Gliphy.sharedInstance.watchButton(tapme, textStyle: UIFontTextStyle.body, fontName: "Georgia")
+        Gliphy.sharedInstance.watchLabel(customStyleLabel, textStyle: UIFontTextStyle(rawValue: "ReallyReallyBigFont"), fontName: "Helvetica")
     }
 }
 

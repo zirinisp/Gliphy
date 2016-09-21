@@ -11,11 +11,11 @@ import UIKit
 struct ConfigSetup {
     static func setup() {
         var config = StyleConfig()
-        config.label[UIFontTextStyleHeadline] = "Verdana"
-        config.label[UIFontTextStyleCaption1] = "MarkerFelt-Thin"
-        config.button[UIFontTextStyleHeadline] = "Verdana"
-        config.textField[UIFontTextStyleBody] = "Verdana"
-        config.textField[UIFontTextStyleCaption1] = "Helvetica"
+        config.label[UIFontTextStyle.headline] = "Verdana"
+        config.label[UIFontTextStyle.caption1] = "MarkerFelt-Thin"
+        config.button[UIFontTextStyle.headline] = "Verdana"
+        config.textField[UIFontTextStyle.body] = "Verdana"
+        config.textField[UIFontTextStyle.caption1] = "Helvetica"
         StyleWatcher.defaultConfig = config
     }
 }
@@ -29,7 +29,7 @@ class WatcherViewController: UIViewController, UITextFieldDelegate {
         watcher.watchViews(inView: view)
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
